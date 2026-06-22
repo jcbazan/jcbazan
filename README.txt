@@ -1,0 +1,1 @@
+Starter package. Extend parser.js with Tesseract word-coordinate parsing.
