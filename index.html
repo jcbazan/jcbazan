@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TruckScanner Upload</title>
+</head>
+<body>
+<h2>Upload 2 Screenshots</h2>
+<input type="file" id="img1" accept="image/*"><br><br>
+<input type="file" id="img2" accept="image/*"><br><br>
+<button id="go">Process</button>
+
+<script>
+document.getElementById('go').onclick = async () => {
+  const f1 = document.getElementById('img1').files[0];
+  const f2 = document.getElementById('img2').files[0];
+
+  if(!f1 || !f2){
+    alert('Select both screenshots');
+    return;
+  }
+
+  localStorage.setItem('ts_file1', f1.name);
+  localStorage.setItem('ts_file2', f2.name);
+
+  location.href='results.html';
+};
+</script>
+</body>
+</html>
