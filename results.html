@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Results</title>
+<style>
+body{font-family:Arial;padding:16px}
+.field{margin:8px 0}
+button{width:100%;padding:10px}
+</style>
+</head>
+<body>
+<h2>Extracted Fields (Demo)</h2>
+<div id="results"></div>
+
+<script>
+const sample = {
+ order_number:'2845675',
+ bol_number:'BRI6853997',
+ shipper:'UNITED STATES GYPSUM CO.',
+ consignee:'COLONIAL MATERIALS'
+};
+
+const out=document.getElementById('results');
+
+Object.entries(sample).forEach(([k,v])=>{
+ const d=document.createElement('div');
+ d.className='field';
+ d.innerHTML=`<button onclick="navigator.clipboard.writeText('${v}')">${k}: ${v}</button>`;
+ out.appendChild(d);
+});
+</script>
+</body>
+</html>
